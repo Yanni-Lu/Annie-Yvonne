@@ -34,3 +34,18 @@ def squirrel_edit(request,unique_squirrel_id):
             'form':form,
             }
     return render(request, 'mysite/edit.html',context)
+
+def squirrel_add(request, add_web = 'mysite/add.html'):
+    if request.method == 'POST':
+        form = SquirrelForm(request.POST)
+        if form.is_valid():
+            form.save()
+            return render(request,'mysite/notice.html')
+    else:
+        form = SquirrelForm()
+    
+    context = {
+            'form':form,
+    }
+
+    return render(request, add_web ,context)

@@ -1,5 +1,15 @@
-<ul>
-    {% for item in squirrels %}
-    <li><a href="/sightings/{{ item.Unique_Squirrel_ID}}/">{{ item.Unique_Squirrel_ID }}</a></li>
-    {% endfor %}
-</ul>
+<!doctype>
+<html>
+	<body>
+		<p>Here're all squirrels' Unique ID. If you want to add one, click here!</p>
+		<form action="/sightings/add/">
+			<button type="submit">I want to add!</button>
+		</form>
+		<ul>
+			{% for item in squirrels %}
+			<li><a href="/sightings/{{ item.Unique_Squirrel_ID}}/">{{ item.Unique_Squirrel_ID }}</a></li>
+			{% endfor %}
+
+		</ul>
+	</body>
+</html>
