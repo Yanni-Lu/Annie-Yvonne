@@ -49,3 +49,18 @@ def squirrel_add(request, add_web = 'mysite/add.html'):
     }
 
     return render(request, add_web ,context)
+
+def squirrel_stats(request, stats_web = 'mysite/stats.html'):
+    total_number = Squirrel.objects.all().count()
+    adult = Squirrel.objects.filter(Age="Adult").count()/total_number
+    gray_fur = Squirrel.objects.filter(Primary_Fur_Color="Gray").count()/total_number
+    above_ground = Squirrel.objects.filter(Location="Above Ground").count()/total_number
+    running = Squirrel.objects.filter(Running=True).count()/total_number
+    context = {
+            'total_number':total_number,
+            'adult':adult,
+            'gray_fur':gray_fur,
+            'above_ground':above_ground,
+            'running':running,
+    }
+    return render(request, stats_web, context)

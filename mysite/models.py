@@ -16,11 +16,7 @@ class Squirrel(models.Model):
             default = None,
             primary_key = True,
             )
-    Hectare = models.CharField(
-            max_length=3,
-            default = None,
-            )
-
+    
     AM = 'AM'
     PM = 'PM'
 
@@ -38,10 +34,6 @@ class Squirrel(models.Model):
             default = None,
             )
 
-    Hectare_Squirrel_Number = models.IntegerField(
-            default=0,
-            blank = True,
-            )
 
     Age = models.CharField(
             max_length=20,
@@ -52,24 +44,6 @@ class Squirrel(models.Model):
     Primary_Fur_Color = models.CharField(
             max_length=15,
             default = None,
-            blank = True,
-            )
-
-    Highlight_Fur_Color = models.CharField(
-            max_length=20,
-            default = None,
-            blank = True,
-            )
-
-    Combination_of_Primary_and_Highlight_Color = models.CharField(
-            max_length=20,
-            default = None,
-            blank = True,
-            )
-
-    Color_notes = models.CharField(
-            max_length=100,
-            default=None,
             blank = True,
             )
 
@@ -87,11 +61,6 @@ class Squirrel(models.Model):
             blank = True,
             )
 
-    Above_Ground_Sighter_Measurement = models.CharField(
-            max_length=10,
-            default=None,
-            blank=True,
-            )
 
     Specific_Location = models.CharField(
             max_length=100,
@@ -131,41 +100,6 @@ class Squirrel(models.Model):
 
     Runs_from  = models.BooleanField(default=None,)
 
-    Other_Interactions = models.CharField(
-            max_length=100,
-            default=None,
-            blank=True,
-            )
-    Lat_Long = models.CharField(
-            max_length=100,
-            default=None,
-            blank=True,
-            )
-    Zip_Codes = models.CharField(
-            max_length=100,
-            default=None,
-            blank=True,
-            )
-
-    Community_Districts = models.IntegerField(
-            default=None,
-            blank = True,
-            )
-
-    Borough_Boundaries = models.IntegerField(
-            default=None,
-            blank = True,
-            )
-
-    City_Council_Districts = models.IntegerField(
-            default=None,
-            blank = True,
-            )
-
-    Police_Precincts = models.IntegerField(
-            default=None,
-            blank = True,
-            )
 
     def __str__(self):
         return self.Unique_Squirrel_ID
